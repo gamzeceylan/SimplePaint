@@ -11,7 +11,7 @@ namespace SimplePaint.Shapes
     public abstract class Shape
     {
 
-        protected Point[] cornerPoints; // içeride bunula işlem yapıcaz
+        protected Point[] cornerPoints; 
         protected int width;
         protected int height;
         public Point LocationStarting { get; set; }
@@ -20,10 +20,9 @@ namespace SimplePaint.Shapes
         public int Y { get => this.LocationStarting.Y; }
         public int Width { get => this.width; }
         public int Height { get => this.height; }
-        public Point[] CornerPoints { get => this.cornerPoints; } // içeridekini verecek ama bi rşey değiştiremeyecek
-        public SolidBrush BrushColor { get; set; } // sonra değiştirilecek
+        public Point[] CornerPoints { get => this.cornerPoints; } 
+        public SolidBrush BrushColor { get; set; } 
        
-
         public Shape(Point locationStaritng, Point locationEnding)
         {
             this.LocationStarting = locationStaritng;

@@ -69,7 +69,6 @@ namespace SimplePaint
         }
 
         #region Tanımlanan Fonksiyonlar
-
         private void AllPictureBoxRemoveBorder(GroupBox groupBx) // groupBox içinde bir buton seçildiğinde kalan butonların pasif yapılması işlemini yapıyor.
         {
             foreach (var item in groupBx.Controls.OfType<PictureBox>())
@@ -95,8 +94,6 @@ namespace SimplePaint
                 g.FillPolygon(shape.BrushColor, shape.CornerPoints);
 
         }
-
-
 
         #region Dosya İşlemleri için Fonksiyonlar
         public void ExportToTextFile(List<Shape> list) // nesneleri bir txt olarak kaydeder
@@ -202,7 +199,6 @@ namespace SimplePaint
         #endregion
 
         #region Çizim Şekli
-
         private void rectangle_MouseClick(object sender, MouseEventArgs e) // rectange nesnesine tıklandığında
         {
             _shape = _Shapes._rectangle; // nesnenin rectangle olacağı belirleniyor
@@ -263,7 +259,6 @@ namespace SimplePaint
                     MouseDownStartingLocation = e.Location;
                     IsMouseDownHexagon = true;
                 }
-
             }
 
             // artık seçim basılıysa, nesneyi taşımak için
@@ -281,7 +276,6 @@ namespace SimplePaint
                     }
                 }
             }
-
 
             // seçilen nesnenin rengini değiştirme
             if (e.Button == MouseButtons.Left && IsMouseDownChoose && shapeList.Count != 0 && !paint && !IsMouseDownDelete && IsMouseChangedColor)
@@ -305,7 +299,7 @@ namespace SimplePaint
 
             }
 
-            //// seçili nesnenin etrafını işaretleme -- yaşımıyor
+            //// seçili nesnenin etrafını işaretleme -- çalışmıyor
             //if (e.Button == MouseButtons.Left && IsMouseDownChoose && !Moving && shapeList.Count != 0 && !paint && !IsMouseDownDelete && !IsMouseChangedColor)
             //{
             //    foreach (var item in shapeList)
@@ -356,7 +350,6 @@ namespace SimplePaint
                     CreateShape(rec);
                     IsMouseDownRectange = false;
                 }
-
                 if (MouseDownEndingLocation != MouseDownStartingLocation && _shape == _Shapes._circle)
                 {
                     cir = new CircleShape(MouseDownStartingLocation, MouseDownEndingLocation);
@@ -366,7 +359,6 @@ namespace SimplePaint
                     CreateShape(cir);
                     IsMouseDownCircle = false;
                 }
-
                 if (MouseDownEndingLocation != MouseDownStartingLocation && _shape == _Shapes._triangle)
                 {
                     tri = new TriangleShape(MouseDownStartingLocation, MouseDownEndingLocation);
@@ -376,7 +368,6 @@ namespace SimplePaint
                     CreateShape(tri);
                     IsMouseDownTriangle = false;
                 }
-
                 if (MouseDownEndingLocation != MouseDownStartingLocation && _shape == _Shapes._hexagon)
                 {
                     hex = new HexagonShape(MouseDownStartingLocation, MouseDownEndingLocation);
@@ -386,7 +377,6 @@ namespace SimplePaint
                     CreateShape(hex);
                     IsMouseDownHexagon = false;
                 }
-
                 MouseDownEndingLocation = new Point(0, 0);
                 MouseDownStartingLocation = new Point(0, 0);
                 AllPictureBoxRemoveBorder(groupBox1);
@@ -495,9 +485,7 @@ namespace SimplePaint
                 chooseBtn.BorderStyle = BorderStyle.None;
                 System.Threading.Thread.Sleep(500);
                 deleteBtn.BorderStyle = BorderStyle.None;
-
             }
-
         }
         #endregion
 
@@ -541,7 +529,6 @@ namespace SimplePaint
         #endregion
 
         #region Şekil İşlemleri
-
         private void newPageBtn_Click(object sender, EventArgs e)
         {
             shapeList.Clear();

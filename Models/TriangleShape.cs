@@ -21,7 +21,6 @@ namespace SimplePaint.Shapes
             };
             this.cornerPoints = points;
         }
-
         public override string ToString()
         {
             return "TriangleShape";
